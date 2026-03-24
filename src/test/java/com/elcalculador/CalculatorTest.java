@@ -9,12 +9,24 @@ class CalculatorTest {
     @Test
     void additionWorks() {
         Calculator calculator = new Calculator();
-        assertEquals(2, calculator.add(1, 1));
+        assertEquals(23, calculator.addition(22, 1));
     }
 
     @Test
-    void subtractionWorks() {
+    void soustractionWorks() {
         Calculator calculator = new Calculator();
-        assertEquals(1, calculator.subtract(3, 2));
+        assertEquals(1, calculator.soustraction(3, 2));
+    }
+
+    @Test
+    void multiplicationWorks() {
+        Calculator calculator = new Calculator();
+        assertEquals(20, calculator.multiplication(2, 10));
+    }
+
+    @Test
+    void divisionWorks() {
+        Calculator calculator = new Calculator();
+        assertEquals(50, calculator.division(100, 2));
     }
 }
