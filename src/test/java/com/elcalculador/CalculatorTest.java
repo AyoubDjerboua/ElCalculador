@@ -3,6 +3,7 @@ package com.elcalculador;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
 
@@ -28,5 +29,14 @@ class CalculatorTest {
     void divisionWorks() {
         Calculator calculator = new Calculator();
         assertEquals(50, calculator.division(100, 2));
+    }
+
+    @Test
+    void divisionByZeroThrowsException() {
+        Calculator calculator = new Calculator();
+        assertEquals("Division par zéro non autorisée", 
+            assertThrows(IllegalArgumentException.class, () -> {
+                calculator.division(10, 0);
+            }).getMessage());
     }
 }

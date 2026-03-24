@@ -22,6 +22,9 @@ public class Calculator
     }
 
     public int division(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Division par zéro non autorisée");
+        }
         result =  a / b;
         System.out.println(result);
         return result;
